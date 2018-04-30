@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour {
 	public void LoadLevel(string name){
 		Debug.Log ("New Level load: " + name);
 		Brick.breakableCount = 0;
+		Paddle.reverse = !Paddle.reverse;
 		Application.LoadLevel (name);
 	}
 
