@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour {
 	private bool hasStarted = false;
 	private Vector3 paddleToBallVector;
 	public static float setGravity = 1f;
+	public static float setAlpha = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,9 @@ public class Ball : MonoBehaviour {
 			}
 		}
 		GetComponent<Rigidbody2D>().gravityScale = setGravity;
+		Color currentColor = GetComponent<SpriteRenderer>().color;
+		currentColor.a = setAlpha;
+		GetComponent<SpriteRenderer>().color = currentColor;
 	}
 	
 	void OnCollisionEnter2D (Collision2D collision) {
