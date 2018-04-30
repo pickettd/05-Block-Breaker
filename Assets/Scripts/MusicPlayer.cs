@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MusicPlayer : MonoBehaviour {
 	static MusicPlayer instance = null;
+	public static bool playMusic = true;
 	
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,8 @@ public class MusicPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (!playMusic) {
+			GameObject.Destroy(gameObject);
+		}
 	}
 }
