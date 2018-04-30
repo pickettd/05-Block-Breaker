@@ -38,6 +38,10 @@ public class Ball : MonoBehaviour {
 		if (hasStarted) {	
 			
 			GetComponent<Rigidbody2D>().velocity += tweak;
+			Color currentColor = GetComponent<SpriteRenderer>().color;
+			currentColor.a = currentColor.a-.001f;
+			GetComponent<SpriteRenderer>().color = currentColor;
+
 		}
 	}
 }
