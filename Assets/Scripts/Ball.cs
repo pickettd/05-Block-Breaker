@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour {
 	private Paddle paddle;
 	private bool hasStarted = false;
 	private Vector3 paddleToBallVector;
+	public static float setGravity = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,7 @@ public class Ball : MonoBehaviour {
 				this.GetComponent<Rigidbody2D>().velocity = new Vector2 (2f, 10f);
 			}
 		}
+		GetComponent<Rigidbody2D>().gravityScale = setGravity;
 	}
 	
 	void OnCollisionEnter2D (Collision2D collision) {

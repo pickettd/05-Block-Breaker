@@ -40,6 +40,7 @@ public class Brick : MonoBehaviour {
 		timesHit++;
 		int maxHits = hitSprites.Length + 1;
 		if (timesHit >= maxHits) {
+			Ball.setGravity += .1f;
 			breakableCount--;
 			levelManager.BrickDestoyed();
 			PuffSmoke();
